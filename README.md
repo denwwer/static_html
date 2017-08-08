@@ -1,4 +1,6 @@
-When SPA used then request via `curl` not return full page content what user see, we know that. Many web crawler when indexing cannot execute JS on page or do it not so good. For this I created simple JS script running on `phantomjs` to resolve this and render crawler page exactly how it looks after JS executed. This requires some little work described in steps.
+When SPA used then request via `curl` not return full page content what user see, we know that. Many web crawler when indexing cannot execute JS on page or do it not so good. For this I created simple JS script running on `phantomjs` to resolve this and render crawler page exactly how it looks after JS executed. 
+
+This requires some little work described in steps.
 
 For this example I used Ubuntu and Rails with `gem 'browser'`. This is used on real/live project.
 #### 1. First install `phantomjs`
@@ -23,7 +25,6 @@ namespace :deploy do
   
   after :finished, :static_pages
 end
-
 ```
 
 Pages will generated in `/public/static_pages` (example path in `generate_pages.js`)
